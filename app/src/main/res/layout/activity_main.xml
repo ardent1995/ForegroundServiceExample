@@ -37,4 +37,14 @@
         app:layout_constraintLeft_toLeftOf="@id/btn_start_service"
         app:layout_constraintRight_toRightOf="@id/btn_start_service"/>
 
+    <Button
+        android:id="@+id/btn_start_intent_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start IntentService"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/btn_stop_service"
+        app:layout_constraintLeft_toLeftOf="@id/btn_stop_service"
+        app:layout_constraintRight_toRightOf="@id/btn_stop_service"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

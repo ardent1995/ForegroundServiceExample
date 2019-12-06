@@ -12,7 +12,7 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     public static final String KEY_INPUT_EXTRA = "inputExtra";
-    private Button btnStartService,btnStopService;
+    private Button btnStartService,btnStopService,btnStartIntentService;
     private EditText etInput;
 
     @Override
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         etInput = findViewById(R.id.et_input);
         btnStartService = findViewById(R.id.btn_start_service);
         btnStopService = findViewById(R.id.btn_stop_service);
+        btnStartIntentService = findViewById(R.id.btn_start_intent_service);
 
         btnStartService.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 stopService(new Intent(MainActivity.this,ExampleService.class));
+            }
+        });
+
+        btnStartIntentService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentServiceIntent = new Intent(MainActivity.this,ExampleIntentService.class);
+                intentServiceIntent.putExtra(KEY_INPUT_EXTRA,etInput.getText().toString());
+                ContextCompat.startForegroundService(MainActivity.this,intentServiceIntent);
             }
         });
     }

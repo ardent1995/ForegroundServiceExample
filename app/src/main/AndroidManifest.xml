@@ -4,6 +4,7 @@
     package="com.example.foregroundserviceexample">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <application
         android:name=".App"
@@ -22,6 +23,7 @@
             </intent-filter>
         </activity>
         <service android:name=".ExampleService"/>
+        <service android:name=".ExampleIntentService"/>
     </application>
 
 </manifest>
